@@ -1,0 +1,17 @@
+name: CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - run: docker image build -t sf-food-truck-api .
+    - run: docker run sf-food-truck-api sh -c "python3 -m unittest tests/*.py"
