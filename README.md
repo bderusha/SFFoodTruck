@@ -15,6 +15,8 @@ visit `http://localhost:5000/trucks/37.7875398934675/-122.397726709152` in your 
 
 ## The Food Truck API
 ### `GET /trucks/<latitude>/<longitude>?radius=<float>&status=<string>&limit=<int>`
+NOTE: All distances (`radius` and `DistanceFromLocation`) are in kilometers
+
 200 Response 
 ```
 [

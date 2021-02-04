@@ -51,4 +51,4 @@ class TruckData:
         return great_circle(
             (self.latitude, self.longitude),
             (df_row[self.LATITUDE], df_row[self.LONGITUDE])
-        ).miles
+        ).kilometers
