@@ -14,11 +14,11 @@ def food_trucks(latitude, longitude):
 
 def filter_dataset(request, dataFrame):
     radius = float(request.args.get('radius', 2.0))
-    status = request.args.get('status', TruckData.STATUS_ISSUED)
+    status = request.args.get('status', 'all')
     limit  = int(request.args.get('limit', 20))
 
     dataFrame = dataFrame.sort_values(TruckData.DISTANCE)
-    if status != 'all':
+    if status != 'all' and status in TruckData.STATUS_ENUM:
         dataFrame = dataFrame[dataFrame[TruckData.STATUS] == status]
 
     dataFrame = dataFrame[dataFrame[TruckData.DISTANCE] < radius]

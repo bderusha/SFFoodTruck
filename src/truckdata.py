@@ -16,6 +16,10 @@ class TruckData:
     STATUS_REQUESTED = 'REQUESTED'
     STATUS_SUSPEND = 'SUSPEND'
 
+    STATUS_ENUM = [
+        STATUS_ISSUED, STATUS_ONLINE, STATUS_EXPIRED, STATUS_REQUESTED, STATUS_SUSPEND
+    ]
+
     def __init__(self, latitude=0.0, longitude=0.0):
         self.latitude = latitude
         self.longitude = longitude
